@@ -4,7 +4,7 @@
 \name{percolate-package}
 \alias{percolate}
 \alias{percolate-package}
-\title{percolate: Creates Board Object and Allows User to Determine if Board Percolates}
+\title{percolate: What the Package Does (One Line, Title Case)}
 \description{
 What the package does (one paragraph).
 }

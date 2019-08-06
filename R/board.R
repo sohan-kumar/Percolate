@@ -1,6 +1,7 @@
 #' is_valid
 #'
 #' @param mat matrix represening the board
+#' @import assertthat
 #'
 #' @return TRUE if proper board
 is_valid <- function(mat) {
