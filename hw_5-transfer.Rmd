@@ -1,3 +1,6 @@
+```{r}
+library(percolate)
+```
 - **1f.** Before you go any future, write a few sentences are why it was useful / why you think it will be use to have the `board`'s superclass be `matrix`. (If you have the general idea you can write this after you do the next question.). If you are having struggles thinking about why it's useful, try doing `t(board_example)` and `board_example[1,2]`.
 
 Using matrix as the superclass allows us to index the board and perform basic operations on the board as if it were a matrix. If not treating it as a matrix, we would not really be able to perform operations on the board in a convenient manner.
