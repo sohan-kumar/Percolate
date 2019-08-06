@@ -4,6 +4,7 @@
 #' @import assertthat
 #'
 #' @return TRUE if proper board
+#' @export
 is_valid <- function(mat) {
   assert_that(sum(mat == 0 | mat == 1 | mat == 2) == length(mat))
   assert_that(nrow(mat) == ncol(mat))
@@ -17,6 +18,7 @@ is_valid <- function(mat) {
 #' @param p proportion of blocked squares in board
 #'
 #' @return board object
+#' @export
 board <- function(mat = NULL, n = 5, p = 0.25) {
   if (!is.null(mat)) {
     if(is_valid(mat)) board <- mat
@@ -43,6 +45,7 @@ convert_to_df <- function(mat, n) {
 #' @import tidyr
 #'
 #' @return ggplot graphic of the inputted board (water, empty blocks, and blocked blocks)
+#' @export
 plot_board <- function(x) {
   is_valid(unclass(x))
   n <- attr(x, "n")

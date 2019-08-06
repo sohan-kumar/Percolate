@@ -4,9 +4,9 @@
 \name{percolate-package}
 \alias{percolate}
 \alias{percolate-package}
-\title{percolate: What the Package Does (One Line, Title Case)}
+\title{percolate: Allows user to create boards and see if board percolates}
 \description{
-What the package does (one paragraph).
+Use can create a board and perform different functions on the board, like percolate, plot etc
 }
 \author{
 \strong{Maintainer}: First Last \email{first.last@example.com} (YOUR-ORCID-ID)
