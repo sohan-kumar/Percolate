@@ -32,14 +32,14 @@ percolate_side <- function(mat, n, start) {
   return(mat)
 }
 
-#' percolate
+#' percolate_helper
 #'
 #' @param mat board
 #' @param n num rows of the board
 #'
 #' @return does a percolation iteration of the board
 #' @export
-percolate <- function(mat, n) {
+percolate_helper <- function(mat, n) {
   #top row fill water in all empty boxes
   for (i in seq(1, n^2, n)) if (mat[i] == 1) mat[i] = 2
   #rest of board - top/down percolation followed by side/side percolation
@@ -64,9 +64,19 @@ percolate.board <- function(start_board) {
   new_board <- percolate(mat,n)
   while(!all(old_board == new_board)) {
     old_board = new_board
-    new_board <- percolate(old_board, n)
+    new_board <- percolate_helper(old_board, n)
   }
   percolates <- F
   for (i in seq(n, n^2, n)) if (new_board[i] == 2) percolates <- T
   return(list(result_board = board(new_board), result = percolates))
+}
+
+#' percolate
+#'
+#' @param x board
+#'
+#' @return list: result board after percolation attempt, T if percolation successful, else F
+#' @export
+percolate <- function(x, ...) {
+  return(percolate.board(x))
 }
