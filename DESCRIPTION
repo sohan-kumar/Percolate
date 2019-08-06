@@ -1,5 +1,5 @@
 Package: percolate
-Title: What the Package Does (One Line, Title Case)
+Title: Allows user to create boards and see if board percolates
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "First",
@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "first.last@example.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: Use can create a board and perform different functions on the board, like percolate, plot etc
 License: What license it uses
 Encoding: UTF-8
 LazyData: true
