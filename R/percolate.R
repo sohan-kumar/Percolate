@@ -61,7 +61,7 @@ percolate.board <- function(start_board) {
   is_valid(mat)
   n <- attr(start_board, "n")
   old_board <- mat
-  new_board <- percolate(mat,n)
+  new_board <- percolate_helper(mat,n)
   while(!all(old_board == new_board)) {
     old_board = new_board
     new_board <- percolate_helper(old_board, n)
