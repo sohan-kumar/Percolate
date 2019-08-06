@@ -39,6 +39,8 @@ convert_to_df <- function(mat, n) {
 #' plot_board
 #'
 #' @param x board
+#' @import ggplot2
+#' @import tidyr
 #'
 #' @return ggplot graphic of the inputted board (water, empty blocks, and blocked blocks)
 plot_board <- function(x) {
