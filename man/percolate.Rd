@@ -4,15 +4,13 @@
 \alias{percolate}
 \title{percolate}
 \usage{
-percolate(mat, n)
+percolate(x, ...)
 }
 \arguments{
-\item{mat}{board}
-
-\item{n}{num rows of the board}
+\item{x}{board}
 }
 \value{
-does a percolation iteration of the board
+list: result board after percolation attempt, T if percolation successful, else F
 }
 \description{
 percolate
