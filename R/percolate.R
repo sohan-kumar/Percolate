@@ -5,6 +5,7 @@
 #' @param start row number
 #'
 #' @return percolate the current row from the top down
+#' @export
 percolate_top <- function(mat, n, start) {
   for (i in seq(start, n^2, n)) {
     if (mat[i - 1] == 2 && mat[i] == 1) mat[i] = 2
@@ -19,6 +20,7 @@ percolate_top <- function(mat, n, start) {
 #' @param start row number
 #'
 #' @return percolate all squares around the current square
+#' @export
 percolate_side <- function(mat, n, start) {
   for (i in seq(start, n^2, n)) {
     if (mat[i] == 2) {
@@ -36,6 +38,7 @@ percolate_side <- function(mat, n, start) {
 #' @param n num rows of the board
 #'
 #' @return does a percolation iteration of the board
+#' @export
 percolate <- function(mat, n) {
   #top row fill water in all empty boxes
   for (i in seq(1, n^2, n)) if (mat[i] == 1) mat[i] = 2
@@ -52,6 +55,7 @@ percolate <- function(mat, n) {
 #' @param start_board board
 #'
 #' @return list: result board after percolation attempt, T if percolation successful, else F
+#' @export
 percolate.board <- function(start_board) {
   mat <- unclass(start_board)
   is_valid(mat)

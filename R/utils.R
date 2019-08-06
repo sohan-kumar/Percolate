@@ -7,6 +7,7 @@ library(testthat)
 #' @param p proportion of blocked out squares
 #'
 #' @return n x n board with the required number of blocked out units
+#' @export
 generate_board_mat <- function(n = 5, p = 0.25) {
   assert_that(n >= 0)
   assert_that(n %% 1 == 0)
@@ -23,6 +24,7 @@ generate_board_mat(n = 8, p = 0.75)
 #' @param mat matrix represening the board
 #'
 #' @return TRUE if proper board
+#' @export
 is_valid <- function(mat) {
   assert_that(sum(mat == 0 | mat == 1 | mat == 2) == length(mat))
   assert_that(nrow(mat) == ncol(mat))
@@ -36,6 +38,7 @@ is_valid <- function(mat) {
 #' @param p proportion of blocked squares in board
 #'
 #' @return board object
+#' @export
 board <- function(mat = NULL, n = 5, p = 0.25) {
   if (!is.null(mat)) {
     if(is_valid(mat)) board <- mat
@@ -54,6 +57,7 @@ board <- function(mat = NULL, n = 5, p = 0.25) {
 #' @param n nrow of matrix
 #'
 #' @return matrix in numeric form
+#' @export
 convert_to_matrix <- function(txt_mat, n) {
   mat <- vector(length = n ^ 2)
   for (i in 1:n) {
@@ -78,6 +82,7 @@ convert_to_matrix <- function(txt_mat, n) {
 #' @param n nrow of matrix
 #'
 #' @return calls error if improper formatting, otherwise return conversion of matrix
+#' @export
 read_board <- function(txt, n) {
   if(txt[1] != "----" & txt[1 + n + 2] != "----") stop("file not properly formatted")
   return(convert_to_matrix(txt[3:(3+n-1)], n))
@@ -87,7 +92,7 @@ read_board <- function(txt, n) {
 #' @param file file path
 #'
 #' @return list of boards designated from file path
-
+#' @export
 read_boards <- function(file) {
   board_lines <- readLines(file)
   board_start <- head(which(board_lines == "----"), -1)
